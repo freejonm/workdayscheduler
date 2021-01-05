@@ -29,3 +29,10 @@ changeColor(13, "#1");
 changeColor(14, "#2");
 changeColor(15, "#3");
 changeColor(16, "#4");
+
+// user can add events
+
+$(".edit").click(function(){
+    console.log("edit button clicked");
+})
+// events are stored in local memory
