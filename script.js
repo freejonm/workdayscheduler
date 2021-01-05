@@ -33,6 +33,8 @@ changeColor(16, "#4");
 // user can add events
 
 $(".edit").click(function(){
-    console.log("edit button clicked");
-})
+    var newEvent = prompt("What is the title of the event you want to add?")
+
+    $(".edit").text(newEvent);
+});
 // events are stored in local memory
