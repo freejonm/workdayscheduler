@@ -37,6 +37,8 @@ $(".time-block").click(function(event){
     var newEvent = prompt("What is the title of the event you want to add?")
 
     $(event.target).text(newEvent);
+
+    localStorage.setItem(event.target.id, newEvent);
 });
 
 // events are stored in local memory
