@@ -9,15 +9,15 @@ $("#currentDay").text("Current date/time: " + now._d);
 
 function changeColor(number, string){
     if(now.hour() < number){
-        $(string).css("background-color", "green")
+        $(string).addClass("future");
     }
 
     else if (now.hour() > number){
-        $(string).css("background-color", "red");
+        $(string).addClass("past");
     }
 
     else {
-        $(string).css("background-color", "blue");
+        $(string).addClass("present");
     }
 }
 
