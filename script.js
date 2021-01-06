@@ -32,9 +32,11 @@ changeColor(16, "#4");
 
 // user can add events
 
-$(".edit").click(function(){
+$(".time-block").click(function(){
     var newEvent = prompt("What is the title of the event you want to add?")
 
-    $(".edit").text(newEvent);
+    $(".time-block").text(newEvent);
+
+    localStorage.setItem(newEvent);
 });
 // events are stored in local memory
