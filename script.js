@@ -4,6 +4,7 @@ console.log(now);
 // print current date/time in browser
 $("#currentDay").text("Current date/time: " + now._d);
 
+renderEvents();
 
 // timeblocks change color relative to time of day
 function changeColor(number, string){
@@ -37,7 +38,7 @@ $(".time-block").click(function(event){
 
     $(event.target).text(newEvent);
 
-    localStorage.setItem("hour", event.target.id);
+    localStorage.setItem("hour", JSON.stringify(event.target.id));
     localStorage.setItem("event", newEvent);
 });
 
@@ -49,4 +50,10 @@ function renderEvents(){
 
     console.log(hour + event);
 
+    $("#hour").text(event);
+
 }
+
+$(".saveBtn").click(function(){
+    
+})
