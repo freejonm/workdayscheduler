@@ -48,14 +48,14 @@ $(".time-block").click(function(event){
 function renderEvents(){
     var hour = JSON.parse(localStorage.getItem("hour"));
     var el = "#"
-    var hourEl = el.concat(hour);
-    var hourString = JSON.stringify(hourEl);
+    var hourEl = el + hour;
+    
 
     var event = localStorage.getItem("event");
 
-    // console.log(hourEl + event);
-    console.log(hourString);
-    $(hourString).text(event);
+    console.log(hourEl);
+
+    $(hourEl).text(event);
     // $("#10").text(event);
 
 }
