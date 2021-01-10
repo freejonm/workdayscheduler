@@ -46,17 +46,21 @@ $(".time-block").click(function(event){
 // events stored in local memory populate when browser refreshes
 
 function renderEvents(){
-    var hour = localStorage.getItem("hour");
+    var hour = JSON.parse(localStorage.getItem("hour"));
     var el = "#"
-    var hourEl = el + hour
+    var hourEl = el.concat(hour);
+    var hourString = JSON.stringify(hourEl);
 
     var event = localStorage.getItem("event");
 
-    console.log(hourEl + event);
-
-    $("#hour").text(event);
+    // console.log(hourEl + event);
+    console.log(hourString);
+    $(hourString).text(event);
+    // $("#10").text(event);
 
 }
+
+
 
 $(".saveBtn").click(function(){
     
