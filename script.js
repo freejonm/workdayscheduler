@@ -38,7 +38,8 @@ $(".time-block").click(function(event){
 
     $(event.target).text(newEvent);
 
-    localStorage.setItem("hour", JSON.stringify(event.target.id));
+    localStorage.setItem("hour", event.target.id);
+
     localStorage.setItem("event", newEvent);
 });
 
@@ -46,9 +47,12 @@ $(".time-block").click(function(event){
 
 function renderEvents(){
     var hour = localStorage.getItem("hour");
+    var el = "#"
+    var hourEl = el + hour
+
     var event = localStorage.getItem("event");
 
-    console.log(hour + event);
+    console.log(hourEl + event);
 
     $("#hour").text(event);
 
