@@ -6,7 +6,6 @@ $("#currentDay").text("Current date/time: " + now._d);
 
 
 // timeblocks change color relative to time of day
-
 function changeColor(number, string){
     if(now.hour() < number){
         $(string).addClass("future");
@@ -30,7 +29,7 @@ changeColor(14, "#2");
 changeColor(15, "#3");
 changeColor(16, "#4");
 
-// user can add events
+// user can add events that are added to local memory
 
 
 $(".time-block").click(function(event){
@@ -38,7 +37,16 @@ $(".time-block").click(function(event){
 
     $(event.target).text(newEvent);
 
-    localStorage.setItem(event.target.id, newEvent);
+    localStorage.setItem("hour", event.target.id);
+    localStorage.setItem("event", newEvent);
 });
 
-// events are stored in local memory
+// events stored in local memory populate when browser refreshes
+
+function renderEvents(){
+    var hour = localStorage.getItem("hour");
+    var event = localStorage.getItem("event");
+
+    console.log(hour + event);
+
+}
